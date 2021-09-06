@@ -1,0 +1,56 @@
+{% extends 'adminbase.html' %}
+
+{% block admincontent %}
+    {% for message in messages %}
+        <div class="p-2 alert alert-success" id="msg">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="conatiner">
+        <div class="row">
+            <div class="col-2 m-2 text-center">
+                <a href="{% url 'updatelogo' %}">
+                    <div class="p-5 rounded-pill">Update Logo</div>
+                </a>
+            </div>
+            <div class="col-2 m-2 text-center">
+                <a href="{% url 'addfeatures' %}">
+                    <div class="p-5 rounded-pill">Add Features</div>
+                </a>
+            </div>
+            
+            <div class="col-2 m-2 text-center">
+                <a href="{% url 'deletefeatures' %}">
+                    <div class="p-5 rounded-pill">Delete Features</div>
+                </a>
+            </div>
+            <div class="col-2 m-2 text-center">
+                <a href="{% url 'updatefeatures' %}">
+                    <div class="p-5 rounded-pill">Update Features</div>
+                </a>
+            </div>
+            <div class="col-2 m-2 text-center">
+                <a href="{% url 'addsocialmedia' %}">
+                    <div class="p-5 rounded-pill">Add Social Media</div>
+                </a>
+            </div>
+            <div class="col-2 m-2 text-center">
+                <a href="{% url 'updatesocialmedia' %}">
+                    <div class="p-5 rounded-pill">Update Social Media</div>
+                </a>
+            </div>
+            <div class="col-2 m-2 text-center">
+                <a href="{% url 'deletesocialmedia' %}">
+                    <div class="p-5 rounded-pill">Delete Social Media</div>
+                </a>
+            </div>
+            <div class="col-2 m-2 text-center">
+                <a href="{% url 'addvideo' %}">
+                    <div class="p-5 rounded-pill">Add Videos</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

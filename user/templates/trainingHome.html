@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{%  load static %}
+{% block content %}
+    <div class="conatainer m-5">
+        <div class="row pt-5 pb-md-4 pb-sm-0"></div>
+        <div class="row">
+            <div class="col-12 col-lg-3 col-md-4 col-sm-6" style="color: #fd7e14;">
+                <div class="card" >
+                    <div class="card-header text-center" style="background-color: #fd7e14; color: white;">
+                        <b>CATEGORIES</b>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-dark">
+                          <b><a href="{% url 'footballOverview' %}" aria-current="page" class="text-decoration-none" style="color: #fd7e14;">Football</a></b>
+                            {% block footballOverview %} {% endblock %}
+                        </li>
+                        <li class="list-group-item bg-dark">
+                          <b><a href="{% url 'cricketOverview' %}" aria-current="page" class="text-decoration-none" style="color: #fd7e14;">Cricket</a></b>
+                            {% block cricketTutorial %} {% endblock %}
+                        </li>
+                    </ul>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-9 col-md-8 col-sm-6" style="background-color: white;">
+                {% block selected %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>    
+{% endblock %}

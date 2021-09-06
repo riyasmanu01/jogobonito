@@ -1,0 +1,53 @@
+{% extends 'football.html' %}
+{% load static %}
+
+{% block selected %}
+
+<!-- Players & their Positions Start -->
+<div class="row text-center p-5 h2" style="color: #fd7e14;"><b>Players And Their Positions</b></div>
+<div class="row">
+    <p style="text-align: justify; font-size: 16px;">
+        Each Football team has 11 players and among these players, 1 is a goalkeeper. Be it the offensive 
+        or defensive team, the player’s responsibility is to score a goal for the team and stop the 
+        opposing team from scoring a goal. Following diagram shows various positions of the players on a 
+        football field. A list of player positions and their responsibilities is also provided.
+    </p>
+    <div class="col-12 text-center py-3">
+        <img src="{% static 'images/Training/Football/Player & Positions/positions.jpg' %}" alt="" width="30%">
+    </div>
+    <p style="text-align: justify; font-size: 16px;">
+        <b>Goalkeeper </b> - The main aim of a goalkeeper is to stop the opposing team from scoring a goal. 
+        The goalkeeper is restricted to the rectangular penalty area which is 18 yards away from the goal 
+        and he is the only player in the game who is allowed to use his hands to stop the ball.
+    </p>
+    <p style="text-align: justify; font-size: 16px;">
+        <b>Defenders </b> - The defenders are positioned in front of the goalkeeper and their aim is to 
+        stop the opposing team from entering into their goal area.
+    </p>
+    <p style="text-align: justify; font-size: 16px;">
+        <b>Outside fullback</b> - They play on the left and right flanks and see that the ball doesn’t 
+        pass over them. They rarely move from their positions.
+    </p>
+    <p style="text-align: justify; font-size: 16px;">
+        <b>Central Defenders </b> - They are positioned in the center of the field and are supposed 
+        to cover the leading goal scorer of the opposition’s team.
+    </p>
+    <p style="text-align: justify; font-size: 16px;">
+        <b>Midfielders </b> - They are the link between the defenders and attackers. They need to be 
+        fit and physically very strong than other players on the field as they are the players who run 
+        maximum time of the game all around the field. Their responsibility is to enter the opposing 
+        team’s area and see that they defend them when the opposing team retains the ball.
+    </p>
+    <p style="text-align: justify; font-size: 16px;">
+        <b>Forwards </b> - Their main aim is to score goals or to create an easy situation for their 
+        teammates to score a goal.
+    </p>
+    <p style="text-align: justify; font-size: 16px;">
+        <b>Center Forward</b> - The most tactful, dangerous and strong player of the game. They are 
+        also called strikers. Strikers are basically the leading goal scorers in the game.
+    </p>
+</div>
+<!-- Players & their Positions End -->
+
+
+{% endblock %}

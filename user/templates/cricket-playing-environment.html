@@ -1,0 +1,50 @@
+{% extends 'cricket.html' %}
+{% load static %}
+
+<!-- <div class="col-12 text-center">
+    <img src="{% static 'images/Training/Cricket/Bat & Ball/cricketStadium.jpg' %}" alt="" width="30%">
+</div> -->
+
+<!-- <ul style="list-style-type: square;" class="px-5 ml-5">
+    <li>
+    </li>
+</ul> -->
+
+{% block selected %}
+
+<div class="row text-center p-5 h1" style="color: gray;"><b>Playing Environment</b></div>
+<div class="row">
+    <p style="text-align: justify; font-size: 16px;">
+        Cricket is a team sport and is played on a big ground. The pitch in the center and ground is prepared for any format of the match. Later, stumps are rooted along the breadth of the pitch and players are called on to the ground to start the play. The team fielding will have 11 players guarding the boundary and two batsmen from opposition will come to bat. There will be two umpires on the field to monitor the match proceedings.    
+    </p>
+</div>
+<h3 style="color: #fd7e14;" class="py-4"><b>Cricket Field Dimensions</b></h3>
+<div class="row">
+    <p style="text-align: justify; font-size: 16px;">
+        The sport is played on presumably a circular leveled ground with pitch as the center. The pitch is 24-yards in length and 4-yards in breadth. A rope is placed around the ground at a distance of 80 yards from the pitch. This rope is observed as boundary. The stumps are rooted at both ends with distance of 22-yards between them. Two carved small pieces of wood are placed on stumps, called bails. White parallel lines are drawn on both ends of stumps, called batting/bowling crease. It is 1.2 meters from stumps. Another set of parallel lines are drawn perpendicular to batting crease, called return crease. This is at a distance of half-meter from the length of pitch.    
+    </p>
+    <div class="col-12 text-center">
+        <img src="{% static 'images/Training/Cricket/Playing Environment/playingEnvironment.jpg' %}" alt="" width="50%">
+    </div>
+</div>
+<h3 style="color: #fd7e14;" class="py-4"><b>Dimensions of Cricket Equipment</b></h3>
+<div class="row">
+    <p style="text-align: justify; font-size: 16px;">
+        ICC has formed certain rules for cricket equipment along with the rules of play. The bat, ball, glove, pads, and all other equipment have to meet the standards set by the governing body. It’s not only the size of equipment but also the logos used on the equipment that should conform to the standards set by ICC. Given below is a list of cricket equipment with permissible measures −     
+    </p>
+    <ul style="list-style-type: square;" class="px-5 ml-5">
+        <li>
+            <b>Bat </b>− A cricket bat should not be more than 38 inches in length and 4.25 inches wide.
+        </li>
+        <li>
+            <b>Ball </b>− The cricket ball must weigh between 155.9 and 163 g. Apart from weight, the circumference should be between 224 and 229 mm.
+        </li>
+        <li>
+            <b>Keeper glove</b> − The keeper glove doesn’t have specific measurement but should not be made of stretchable material. The glove has webbing between thumb and the index finger.
+        </li>
+    </ul>
+    <p style="text-align: justify; font-size: 16px;">
+        Rest of the equipment are all used to protect body parts, hence there aren’t any specific measures or design standards, with safety as priority.
+    </p>
+</div>
+{% endblock %}

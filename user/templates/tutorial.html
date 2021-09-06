@@ -1,0 +1,82 @@
+{% extends 'tutorial-base.html' %}
+{% block tutorialcontent %}
+
+
+<div class="col-12 p-lg-5 p-md-4 p-sm-3 p-2 pt-5 pt-lg-5 pt-sm-5 pt-md-5">
+    <div class="col-12 p-lg-5 p-md-4 p-sm-3 p-3 mb-2" style="border-radius: 5px; box-shadow: grey 1px 1px 5px .5px; background-color: black; color: white;">
+        <p>
+        Tutorial is a collection of sports that include competitions like Football, Cricket, 
+        Tennis and badminton. In this tutorial, we will get to know the basics of sport and 
+        discuss all the relevent facts and information about various different types of sports.
+        Below you can see so many sports in tutorial session. For a player of any sports can 
+        access the video tutorials as they wants. All sports are divided to many subcategories 
+        based on players position.  So a particular player can access the videos for their position. 
+        </p>
+    </div>
+    <hr class="bg-secondary">
+    <div class="col-12 mt-2 pb-4" style="border-radius: 5px; box-shadow: grey 1px 1px 5px .5px;">
+        <div class="p-3 col-12 text-center" style="border-top-left-radius: 5px; border-top-right-radius: 5px; background-color: #fd7e14;">
+            <span style="color: white; text-transform: uppercase;" ><b>tutorials</b></span>
+        </div>
+        <div class="container">
+            <span class="text-secondary">Select your game</span>
+            <div class="row">
+                {% for sports in name %}
+                    <div class="col-6 col-sm-3 mt-2">
+                        <div class="card">
+                            <a class="img-card" href="{% url 'tutorialvideo' sports.name %}">
+                                <img src="{{ sports.image.url }}" />
+                            </a>
+                            <div class="card-read-more text-center">
+                                <a href="{% url 'tutorialvideo' sports.name %}" class="btn btn-link btn-block" style="color: #fd7e14;">
+                                    {{ sports.name }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <hr class="bg-secondary">
+    <div class="col-12 p-lg-5 p-md-4 p-sm-3 p-3 mb-2" style="border-radius: 5px; box-shadow: grey 1px 1px 5px .5px; background-color: #fd7e14; color: white;">
+        <p>
+        Tutorial is a collection of sports that include competitions like Football, Cricket, 
+        Tennis and badminton. In this tutorial, we will get to know the basics of sport and 
+        discuss all the relevent facts and information about various different types of sports.
+        Below you can see so many sports in tutorial session. For a player of any sports can 
+        access the video tutorials as they wants. All sports are divided to many subcategories 
+        based on players position.  So a particular player can access the videos for their position. 
+        </p>
+    </div>
+    {% for sports in name %}
+        <hr class="bg-secondary">
+        <div class="col-12 mt-2 pb-4" style="border-radius: 5px; box-shadow: grey 1px 1px 5px .5px;">
+            <div class="bg-secondary p-3 col-12" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">
+                <span style="color: white; text-transform: uppercase;" ><b>{{ sports.name }} - positions</b></span>
+            </div>
+            <div class="container">
+                <div class="row">
+                    {% for position in position_obj %}
+                        {% if sports.name == position.name %}
+                            <div class="col-6 col-sm-3 mt-2">
+                                <div class="card">
+                                    <a class="img-card" href="{% url 'tutorialvideo' sports.name %}">
+                                        <img src="{{ position.image.url }}" />
+                                    </a>
+                                    <div class="card-read-more text-center">
+                                        <a href="{% url 'tutorialvideo' sports.name %}" class="btn btn-link btn-block text-secondary">
+                                            {{ position.position }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

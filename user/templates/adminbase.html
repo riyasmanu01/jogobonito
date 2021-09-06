@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <style>
+      a{
+        text-decoration: none; 
+        text-transform: capitalize; 
+        font-weight: bold; color: white;
+        
+      }
+      a div{
+        background-color: gray;
+      }
+      a:hover div{
+        background-color: black;
+        color: white;
+      }
+      label{
+        font-weight: bold;
+      }
+
+      .nav-tabs .nav-item .active{
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+    {% block admincontent %}
+    {% endblock %}
+</body>
+
+<script>
+    setTimeout(function(){
+        m = document.getElementById('msg').textContent;
+        if (m.length > 0){
+          document.getElementById('msg').remove();
+        }
+      }, 3000)
+
+    function displaynewpos() {
+      var disnewpos = document.getElementById("newpos");
+      var disnewposimg = document.getElementById("newposimg");
+      var non = document.getElementById("existingpos");
+      disnewpos.classList.remove("d-none");
+      disnewposimg.classList.remove("d-none");
+      non.classList.add("d-none");
+    }
+
+    function displayexistingpos() {
+      var disnewpos = document.getElementById("newpos");
+      var disnewposimg = document.getElementById("newposimg");
+      var non = document.getElementById("existingpos");
+      disnewpos.classList.add("d-none");
+      disnewposimg.classList.add("d-none");
+      non.classList.remove("d-none");
+    }
+    
+    function newsports() {
+      var selected = document.getElementById("newsportsform");
+      var deselected = document.getElementById("existingsportsform");
+      var active = document.getElementById("newsportsbtn");
+      var deactive = document.getElementById("existingsportsbtn");
+      selected.classList.remove("d-none");
+      deselected.classList.add("d-none");
+      active.classList.add("active");
+      deactive.classList.remove("active");
+
+    }
+    
+    function existingports() {
+      var deselected = document.getElementById("newsportsform");
+      var selected = document.getElementById("existingsportsform");
+      var deactive = document.getElementById("newsportsbtn");
+      var active = document.getElementById("existingsportsbtn");
+      selected.classList.remove("d-none");
+      deselected.classList.add("d-none");
+      active.classList.add("active");
+      deactive.classList.remove("active");
+
+    }
+
+    function filter() {
+      var keyword = document.getElementById("existingsports").value;
+      var select = document.getElementById("existingposition");
+      for (var i = 0; i < select.length; i++) {
+        var txt = select.options[i].text;
+        if (!txt.match(keyword))
+        var txt = select.options[i].attr('disabled', 'disabled').hide()
+      }
+    }
+</script>
+
+</html>

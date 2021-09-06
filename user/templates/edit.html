@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:hover{
+            background-color: red;
+        }
+        ul{
+            width: 50%;
+        }
+        li{
+            
+            padding: 5px;
+        }
+        .active{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <ul style="list-style-type: none;">
+        <li class="active">1</li>
+        <li>2</li>
+    </ul>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+         $(document).ready(function(){
+            $("li").click(function(){
+                $(this).addClass("active");
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'trainingHome.html' %}
+
+{%  load static %}
+
+{% block cricketTutorial %}
+
+<div class="card" style="border-color: black;">
+    <ul class="list-group list-group-flush ">
+        <li class="list-group-item bg-dark">
+          <b><a href="{% url 'cricketOverview' %}" aria-current="page" class="text-decoration-none" style="color: white;">Cricket-Home</a></b>
+        </li>
+        <li class="list-group-item bg-dark">
+          <b><a href="{% url 'cricketBatAndBall' %}" aria-current="page" class="text-decoration-none" style="color: white;">Cricket-A Bat & A Ball</a></b>
+        </li>
+        <li class="list-group-item bg-dark">
+          <b><a href="{% url 'cricketParticipatingCountries' %}" aria-current="page" class="text-decoration-none" style="color: white;">Cricket-Participating Countries</a></b>
+        </li>
+        <li class="list-group-item bg-dark">
+          <b><a href="{% url 'cricketPlayingEnvironment' %}" aria-current="page" class="text-decoration-none" style="color: white;">Cricket-Playing Environment</a></b>
+        </li>
+        <li class="list-group-item bg-dark">
+          <b><a href="{% url 'cricketEquipment' %}" aria-current="page" class="text-decoration-none" style="color: white;">Cricket-Playing Equipment</a></b>
+        </li>
+        <li class="list-group-item bg-dark">
+          <b><a href="{% url 'PopularTermsinCricket' %}" aria-current="page" class="text-decoration-none" style="color: white;">Cricket-Popular Terms In Cricket</a></b>
+        </li>
+        <li class="list-group-item bg-dark">
+          <b><a href="{% url 'howToPlayCricket' %}" aria-current="page" class="text-decoration-none" style="color: white;">Cricket-How To Play?</a></b>
+        </li>
+        <li class="list-group-item bg-dark">
+          <b><a href="{% url 'cricketFormat' %}" aria-current="page" class="text-decoration-none" style="color: white;">Cricket-Format</a></b>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+{% block selected %}
+
+{% endblock %}

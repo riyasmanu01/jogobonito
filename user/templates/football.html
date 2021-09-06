@@ -1,0 +1,33 @@
+{% extends 'trainingHome.html' %}
+
+{% block footballOverview %}
+
+<div class="card" style="border-color: white;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <b><a href="{% url 'footballOverview' %}" aria-current="page" class="text-decoration-none" style="color: #fd7e14;">Overview</a></b>
+        </li>
+        <li class="list-group-item">
+          <b><a href="{% url 'footballParticipatingCountiries' %}" aria-current="page" class="text-decoration-none" style="color: #fd7e14;">Participating Countries</a></b>
+        </li>
+        <li class="list-group-item">
+          <b><a href="{% url 'footballPlayingEnvironment' %}" aria-current="page" class="text-decoration-none" style="color: #fd7e14;">Playing Environment</a></b>
+        </li>
+        <li class="list-group-item">
+          <b><a href="{% url 'footballEquipment' %}" aria-current="page" class="text-decoration-none" style="color: #fd7e14;">Equipments</a></b>
+        </li>
+        <li class="list-group-item">
+          <b><a href="{% url 'footballPopularTerms' %}" aria-current="page" class="text-decoration-none" style="color: #fd7e14;">Popular Terms</a></b>
+        </li>
+        <li class="list-group-item">
+          <b><a href="{% url 'footballPlayersAndPositions' %}" aria-current="page" class="text-decoration-none" style="color: #fd7e14;">Players & Their Positions</a></b>
+        </li>
+        <li class="list-group-item">
+          <b><a href="{% url 'footballHowToPlay' %}" aria-current="page" class="text-decoration-none" style="color: #fd7e14;">How To Play?</a></b>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block selected %}
+{% endblock %}

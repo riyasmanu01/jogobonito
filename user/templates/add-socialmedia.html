@@ -1,0 +1,42 @@
+{% extends 'adminbase.html' %}
+
+
+{% block admincontent %}
+    {% for message in messages %}
+        <div class="p-2 alert alert-success" id="msg">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="p-5 col-12">
+        <div class="p-5 conatiner-fluid">
+            <div class="col-6 p-5 offset-3" style="box-shadow: gray 2px 2px 10px 2px; border-radius: 10px;">
+                <div class="col-12 h1 text-center">
+                    <span style="font-weight: bold;">Add Social Media</span>
+                </div>
+                <form action="{% url 'addsocialmedia' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="name">Social Media</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label for="icon" class="form-label">Icon</label>
+                        <input type="file" name="icon" id="icon" required class="form-control">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label for="link">Link</label>
+                        <input type="text" name="link" id="link" required class="form-control">
+                    </div>
+                    <div class="pt-1 mb-4 text-center">
+                        <button class="btn btn-dark btn-lg btn-block col-12" type="submit"><b>ADD</b></button>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

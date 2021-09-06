@@ -1,0 +1,64 @@
+{% extends 'football.html' %}
+{% load static %}
+
+{% block selected %}
+
+<!-- Equipment Start-->
+<div class="row text-center p-5 h2" style="color: #fd7e14;"><b>Equipment</b></div>
+<div class="row">
+    <p style="text-align: justify; font-size: 16px;">
+        Football involves a lot of running around the field with the ball. 
+        The players also don’t require sporting much gear to play the game. 
+        Cleat shoes, socks, shin protector, and head gear are some of the equipments 
+        used by players. In this section, we will learn about these equipments in detail.
+    </p>
+    <div class="row">
+        <div class="col-8">
+            <p style="text-align: justify; font-size: 16px;">
+                <b>Cleats or turfs</b> − A very important gear for every football player. 
+                These are specially designed shoes with spikes on the bottom that 
+                provide great traction on grass.
+            </p>
+        </div>
+        <div class="col-4 text-center">
+            <img src="{% static 'images/Training/Football/Cleats/cleat1.png' %}" alt="" class="col-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <p style="text-align: justify; font-size: 16px;">
+                <b>Socks</b> − The socks made for Football are very long and they 
+                are meant to cover the shin-guards.
+            </p>
+        </div>
+        <div class="col-4 text-center">
+            <img src="{% static 'images/Training/Football/Socks/socks1.png' %}" alt="" class="col-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <p style="text-align: justify; font-size: 16px;">
+                <b>Shin Guards</b> − These are used to protect the player’s shin. While playing football, 
+                opponent players try to injure players by kicking in the shin area. It could be an 
+                intentional or unintentional act by the player. Hence, shin guards are a protective equipment.
+            </p>
+        </div>
+        <div class="col-4 text-center">
+            <img src="{% static 'images/Training/Football/Shin Guard/shinGuard1.png' %}" alt="" class="col-4">
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-8">
+            <p style="text-align: justify; font-size: 16px;" class="">
+                <b>Soccer Ball</b> − This the main equipment of the game and the total game revolves 
+                around this. A Football is made of vulcanized rubber with plastic bladders and covered 
+                by plastic covers.
+            </p>
+        </div>
+        <div class="col-4 text-center">
+            <img src="{% static 'images/Training/Football/Ball/ball.png' %}" alt="" class="col-4">
+        </div>
+    </div>
+</div>
+<!-- Equipment End-->
+{% endblock %}

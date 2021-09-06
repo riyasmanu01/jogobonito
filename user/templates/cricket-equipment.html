@@ -1,0 +1,57 @@
+{% extends 'cricket.html' %}
+{% load static %}
+
+<!-- <div class="col-12 text-center">
+    <img src="{% static 'images/Training/Cricket/Bat & Ball/cricketStadium.jpg' %}" alt="" width="30%">
+</div> -->
+
+<!-- <ul style="list-style-type: square;" class="px-5 ml-5">
+    <li>
+    </li>
+</ul> -->
+
+{% block selected %}
+
+<div class="row text-center p-5 h1" style="color: gray;"><b>Equipment</b></div>
+<div class="row">
+    <p style="text-align: justify; font-size: 16px;">
+        As cricket is a game of bat and ball, the players are subjected to wear protective gear from not getting hurt. In this chapter, we will discuss about all the important gear and equipment that the players use while playing the game.    
+    </p>
+    <table>
+        <tbody>
+            <tr class="col-12">
+                <td  class="col-10 px-5"><p><b>Bat</b> − Bat is a nicely carved equipment made out of special wood, with a handle on top to hold and play. These vary in weight and size with age and requirement of the batsman.</p></td>
+                <td  class="col-2 p-3"><img src="{% static 'images/Training/Cricket/Equipment/bat.png' %}" alt="Bat" class="col-12"></td>
+            </tr>
+            <tr class="col-12">
+                <td class="col-10 px-5"><p><b>Ball</b> − It is spherical object made out of cork and covered with leather. Two pieces of leather are stitched around the cork ball. The color of the ball for test matches is red and white for ODI and T20 matches.</p></td>
+                <td class="col-2 p-3"><img src="{% static 'images/Training/Cricket/Equipment/ball.png' %}" alt="Ball" class="col-12"></td>
+            </tr>
+            <tr class="col-12">
+                <td class="col-10 px-5"><p><b>Keeper Glove</b> − These are worn on both hands to protect the fingers from injury. Cloth and leather are stitched together in the shape of fingers and palm to fit exactly. The inner-side of the glove has finger gaps with cork tips for more protection.</p></td>
+                <td class="col-2 p-3"><img src="{% static 'images/Training/Cricket/Equipment/keeperGlove.png' %}" alt="Ball" class="col-12"></td>
+            </tr>
+            <tr class="col-12">
+                <td class="col-10 px-5"><p><b>Batsman Glove</b> − This gear is similar in shape but smaller and softer on the outer part when compared to keeper glove. It is used to hold the bat firmly. The finger part of glove has extra protection with hard sponge on the outer area.</p></td>
+                <td class="col-2 p-3"><img src="{% static 'images/Training/Cricket/Equipment/batsmanGlove.png' %}" alt="Ball" class="col-12"></td>
+            </tr>
+            <tr class="col-12">
+                <td class="col-10 px-5"><p><b>Keeper/Batsman Pads</b> − These are worn to protect the lower limbs of the batsman/keeper. They are made with cloth and leather. The front portion of the pads is very hard as there is hard plastic or wood sticks beneath. The rear portion is spongy and soft to soothe and comfort legs. Keeper pads are little shorter than batsman pads.</p></td>
+                <td class="col-2 p-3"><img src="{% static 'images/Training/Cricket/Equipment/pads.png' %}" alt="Ball" class="col-12"></td>
+            </tr>
+            <tr class="col-12">
+                <td class="col-10 px-5"><p><b>Helmet </b> − A head gear for the batsman/keeper while batting or wicket-keeping behind the stumps. It is a mix of metal and hard plastic. It has a metallic grill in the front to protect the face.</p></td>
+                <td class="col-2 p-3"><img src="{% static 'images/Training/Cricket/Equipment/helmet.png' %}" alt="Ball" class="col-12"></td>
+            </tr>
+            <tr class="col-12">
+                <td class="col-10 px-5"><p><b>Stumps </b> − These are cylindrical and long in shape with shard end like spear. This end goes into the ground so that stumps stand erect in the ground.</p></td>
+                <td class="col-1 p-3 px-5"><img src="{% static 'images/Training/Cricket/Equipment/stumps.png' %}" alt="Ball" class="col-12"></td>
+            </tr>
+            <tr class="col-12">
+                <td class="col-10 px-5"><p><b>Bails</b> − Bails are the smallest equipment placed on stumps. It helps in giving easy decisions by umpires to dismiss the batsman when the wicket is broken.</p></td>
+                <td class="col-2 p-3"><img src="{% static 'images/Training/Cricket/Equipment/bails.png' %}" alt="Ball" class="col-12" ></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

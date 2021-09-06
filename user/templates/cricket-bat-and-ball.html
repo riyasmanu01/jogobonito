@@ -1,0 +1,30 @@
+{% extends 'cricket.html' %}
+{% load static %}
+
+{% block selected %}
+    
+
+
+<div class="row text-center p-5 h1" style="color: gray;"><b>A Bat & Ball Game</b></div>
+<h3 style="color: #fd7e14;" class="py-4"><b>Overview</b></h3>
+<div class="row">
+    <p style="text-align: justify; font-size: 16px;">
+        Cricket is a team sport that is played outdoors. Cricket originated in England and gradually became popular across the globe. This sport requires complete physical fitness and athleticism to play. The sport is played between two teams of 11 players each. Australia is the current World Champion (2015). Countries like India, Pakistan, England, South Africa, New Zealand, West Indies, and Sri Lanka also have equally dominant cricket teams.
+    </p>
+</div>
+<h3 style="color: #fd7e14;" class="py-4"><b>Objective</b></h3>
+<div class="row">
+    <p style="text-align: justify; font-size: 16px;">
+        Cricket is played outdoors on a ground. The objective of the game is that a team should score more runs than the opponent team. It is all about attempting to score more runs, while restricting the score and dismissing the batsmen of the opponent team. Further in the document, one can closely understand the game, its popular terms and rules.
+    </p>
+    <div class="col-12 text-center">
+        <img src="{% static 'images/Training/Cricket/Bat & Ball/cricketStadium.jpg' %}" alt="" width="30%">
+    </div>
+</div>
+<h3 style="color: #fd7e14;" class="py-4"><b>Team Size</b></h3>
+<div class="row">
+    <p style="text-align: justify; font-size: 16px;">
+        In cricket, each playing side has 11 players and one of them is appointed as captain. Apart from these 11 players, there are a few more players on each side who can only field as substitute for an injured team member. The fielding team should have 11 players and the opposition can send only two batsmen on the ground at the time of play. A 15-member squad is a must for all international tournaments conducted by the cricket’s governing body, International Cricket Council (ICC).
+    </p>
+</div>
+{% endblock %}

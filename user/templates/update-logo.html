@@ -1,0 +1,28 @@
+{% extends 'adminbase.html' %}
+
+
+{% block admincontent %}
+    <div class="p-5 col-12">
+        <div class="p-5 conatiner-fluid">
+            <div class="col-6 p-5 offset-3" style="box-shadow: gray 2px 2px 10px 2px; border-radius: 10px;">
+                <div class="col-12 h1 text-center">
+                    <span style="font-weight: bold;">Update Logo</span>
+                </div>
+                <form action="{% url 'updatelogo' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="name">Enter logo name</label>
+                        <input type="text" name="name" id="name" class="form-control form-control-lg" required/>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label for="logo" class="form-label">Logo</label>
+                        <input type="file" name="logo" id="logo" required class="form-control">
+                    </div>
+                    <div class="pt-1 mb-4 text-center">
+                        <button class="btn btn-dark btn-lg btn-block col-12" type="submit"><b>UPDATE</b></button>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+{% endblock %}

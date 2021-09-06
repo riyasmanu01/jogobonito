@@ -1,0 +1,131 @@
+{% extends 'tutorial-base.html' %}
+{% load static %}
+{% block tutorialcontent %}
+    
+<div class="container-fluid" style="height: 100px; background-color: lightgrey;"></div>
+<div class="container-fluid" style="background-color: lightgrey;">
+  <div class="row" style="background-color: lightgrey;">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-12 p-3">
+            <!-- side bar start -->
+            <div class="card text-center  fixed-sidebar" id="sports" style="background-color: lightgrey; border: none;">
+                <div class="bg-dark p-3 ">
+                  {% for sportsname in sports %}
+                    <span style="color: #fd7e14; text-transform: capitalize;"><b>{{ sportsname }}</b></span>
+                  {% endfor %}
+                </div>
+                {% for p in position_obj %}
+                <div class="text-start p-2 mt-1" style="background-color: #6e6a66; color: white;  text-transform: capitalize;" >
+                  <span><b>{{ p.position }}</b></span>
+                </div>
+                
+                <ul class="list-group list-group-flush">
+                  {% for t in tutorial_obj %}
+                    {% if t.position == p.position %}
+                      <a href="#{{ p.position }}{{ t.tutorial }}">
+                        <li class="list-group-item" style=" text-transform: capitalize;"><b>{{ t.tutorial }}</b></li>
+                      </a>
+                  {% endif %}
+                  {% endfor %}
+                </ul>
+                {% endfor %}
+              </div>
+            <!-- side bar end -->
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-12 col-12 p-3">
+          <!-- section 1 -->
+          <div class="content2 p-0">
+            <div class="text-center container-fluid p-0">
+              <div class="row col-12 pt-4">
+                {% for sp in sports_obj %}
+                  <div class="col-12">
+                    <img src="{{ sp.icon.url }}" alt="" style="width: 150px;">
+                  </div>
+                  <h1 class="p-1"><b style="color: gray; text-transform: uppercase;">{{ sp.name }}</b></h1>
+                {% endfor %}
+              </div>
+            </div>
+            <hr>
+            <!-- carousel -->
+              <div class="row p-3 ">
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    {% for p in position_obj %}
+                      {% if forloop.counter == 1 %}
+                        <div class="carousel-item active" data-bs-interval="2000">
+                      {% else %}  
+                        <div class="carousel-item" data-bs-interval="2000">
+                      {% endif %}
+                          <img src="{{ p.image.url }}"  class="d-block col-12 objcover carousel-img" alt="...">
+                          <div class="carousel-caption  d-md-block">
+                            <a class="carousel-btn rounded-pill px-5 py-2" href="#{{p.position}}">{{p.position}}</a>
+                          </div>
+                        </div>
+                    {% endfor %}
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              
+            <!-- carousel end -->
+
+          </div>
+          <!-- section 1 -->
+          
+          {% for p in position_obj %}
+          <!-- blank space -->
+          <div class="row p-3"></div>
+
+          <!-- offence section -->
+          <div class="container-fluid p-0">
+            <div class="bg-light col-12 pb-3" style="border-radius: 5px;">
+              <div class="bg-dark p-3 col-12 h4" id="{{ p.position }}" style="border-top-right-radius: 10px; border-top-left-radius: 5px;">
+                <span style="color: #fd7e14; text-transform: capitalize;"><b>{{ p.position }}</b></span>
+              </div>
+              <div class="row text-center mx-auto">
+              <!-- for loop -->
+                {% for t in tutorial_obj %}
+                  {% if p.position == t.position %}
+                    <div class="col-lg-6 col-md-4 col-sm-4 col-6 py-1">
+                      <a href="#{{t.position}}{{t.tutorial}}" class="btn-light bold rounded-pill btn btn-outline-secondary container-fluid">{{t.tutorial}}</a>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+            <!-- subcategory start -->
+            {% for t in tutorial_obj %}
+              {% if p.position == t.position %}
+                <div class="bg-light col-12 pb-3"  style="border-radius: 5px;">
+                  <div class="col-12 mt-5 text-white text-center p-3 bold bg-6e6a66" id="{{ p.position }}{{ t.tutorial }}" style=" text-transform: capitalize; border-top-right-radius: 5px; border-top-left-radius: 5px;">{{ t.tutorial }}</div>
+                  <div class="row mx-3">
+                      {% for a in all %}
+                        {% if a.position == t.position %}
+                          {% if a.tutorial == t.tutorial %}
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col px-3 py-4" style="position: relative;">         
+                              <iframe class="col-12" src="https://www.youtube.com/embed/{{ a.video_src }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                              <div class="col-12 text-center text-secondary" style=" text-transform: capitalize;"><b>{{ a.video_name }}</b></div>  
+                            </div>
+                          {% endif %}
+                        {% endif %}
+                      {% endfor %}
+                  </div>
+                </div>
+                {% endif %}
+              {% endfor %}  
+            
+            <!-- subcategory end -->
+          </div>
+        
+          <!-- offence section end -->
+          {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

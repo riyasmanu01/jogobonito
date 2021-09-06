@@ -1,0 +1,400 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Favicons -->
+    <link href="css/img/favicon.png" rel="icon">
+    <link href="css/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'css/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'css/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'css/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <style> 
+        #sports ul a li:hover{
+          background-color: black;
+          color: white ;
+        }
+        #sports ul a li.active{
+          background-color: #fd7e14;
+          color: white;
+          border-color: #fd7e14;
+        }
+        #sports ul a li{
+          border-radius: 5px;
+        }
+  
+        .content2{
+          background-color: white;
+        }
+        .objcover{
+          object-fit: cover;
+        }
+        .carousel-btn{
+          color: gray;
+          border: 1px solid gray;
+          font-weight: bold;
+          background: transparent;
+        }
+        .carousel-btn-hover{
+          color: white;
+          background-color: black;
+          border: 1px solid white;
+          font-weight: bold;
+        }
+        .carousel-hover-btn{
+          color: white;
+          background-color: gray;
+          border: 1px solid white;
+          font-weight: bold;
+        }
+        .carousel-img{
+          height: 500px;
+        }
+        .cardimg{
+          height: 100px;
+        }
+        .gfg {
+              position: relative;
+          }
+    
+          .card-link {
+              position: absolute;
+              left: 20%;
+              top: 40%;
+              width: 60%;
+         }
+         .border-radius-5{
+          border-radius: 5px;
+         }
+         .btn-outline-secondary:hover{
+           border: 1px solid white;
+         }
+  
+         .bg-6e6a66{
+           background-color: #6e6a66;
+         }
+  
+         .bold{
+          font-weight: bold;
+         }
+  
+         .fixed-sidebar {
+            position: -webkit-sticky;
+            position: -moz-sticky;
+            position: -ms-sticky;
+            position: -o-sticky;
+            position: sticky;
+            top: 20px;
+            bottom: auto;
+        }
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+html,
+body {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  height: 100%;
+  width: 100%; 
+  background: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+ 
+.wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.container-fostrap {
+  display: table-cell;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle;
+}
+.fostrap-logo {
+  width: 100px;
+  margin-bottom:5px
+}
+h1.heading {
+  color: #fff;
+  font-size: 1.15em;
+  font-weight: 900;
+  margin: 0 0 0.5em;
+  color: #505050;
+}
+@media (min-width: 450px) {
+  h1.heading {
+    font-size: 3.55em;
+  }
+}
+@media (min-width: 760px) {
+  h1.heading {
+    font-size: 3.05em;
+  }
+}
+@media (min-width: 900px) {
+  h1.heading {
+    font-size: 3.25em;
+    margin: 0 0 0.3em;
+  }
+} 
+.card {
+  display: block; 
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 5 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+    transition: box-shadow .25s; 
+}
+.card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.img-card {
+  width: 100%;
+  height:200px;
+  border-top-left-radius:2px;
+  border-top-right-radius:2px;
+  display:block;
+    overflow: hidden;
+}
+.img-card img{
+  width: 100%;
+  height: 200px;
+  object-fit:cover; 
+  transition: all .25s ease;
+} 
+.card-content {
+  padding:15px;
+  text-align:left;
+}
+.card-title {
+  margin-top:0px;
+  font-weight: 700;
+  font-size: 1.65em;
+}
+.card-title a {
+  color: #000;
+  text-decoration: none !important;
+}
+.card-read-more {
+  border-top: 1px solid #D4D4D4;
+}
+.card-read-more a {
+  text-decoration: none !important;
+  padding:10px;
+  font-weight:600;
+  text-transform: uppercase
+}
+body{
+  font-family: 'Times New Roman', Times, serif;
+}
+        </style>
+  
+</head>
+<body>
+    <header id="header" class="fixed-top d-flex align-items-center bg-dark">
+        <div class="container d-flex align-items-center justify-content-between">
+          <div class="logo">
+            {% for log in logo_obj %}
+                <a href="{% url 'home' %}">
+                    {% if log.logo == '' %}
+                        <span class="navbar-brand mb-0 h1 col-3 text-white"><b>{{ log.name }}</b></span>
+                    {% else %}
+                        <div class="col-3 px-5 text-center">
+                            <img src="{{ log.logo.url }}" class="" style="object-fit: cover;" height="50px" width="80px"  alt="">
+                        </div>
+                    {% endif %}
+                </a>
+            {% endfor %}    
+          </div>
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a class="nav-link scrollto" href="{% url 'tutorial' %}"><b>HOME</b></a></li>
+              <li>
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary rounded-pill dropdown-toggle nav-link text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      SPORTS
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        {% for sports in name %}
+                            <li><a class="dropdown-item nav-link" href="{% url 'tutorialvideo' sports.name %}" style="text-transform: capitalize;"><b>{{ sports.name }}</b></a></li>
+                        {% endfor %}
+                    </ul>
+                  </div>
+              </li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+        </div>     
+      </header> 
+      <div class="p-4 bg-primary"></div>
+    {% block tutorialcontent %}
+    {% endblock %}
+    <!-- footer start -->
+    <div class="mt-5">
+        <!-- Footer -->
+        <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-between p-4 text-dark bg-light">
+              <!-- Left -->
+              <div class="me-5">
+                <span style="color: #fd7e14"><b>Get connected with us on social networks:</b></span>
+              </div>
+              <!-- Left -->
+  
+              <!-- Right -->
+              <div>
+                {% for socialmedia in media_obj %}
+                <a href="{{ socialmedia.link }}" class="px-3 px-md-1 px-sm-1" target="_blank"><img src="{{ socialmedia.icon.url }}" style="width: 25px;" alt=""></a>
+                {% endfor %}
+              </div>
+              <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+  
+            <!-- Section: Links  -->
+                <section class="">
+                    <div class="container text-center text-md-start mt-5">
+                        <!-- Grid row -->
+                        <div class="row mt-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                <!-- Content -->
+                                <h6 class="text-uppercase fw-bold">JOGO BONITO</h6>
+                                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #fd7e14; height: 2px"/>
+                                <p>
+                                    Here you can use rows and columns to organize your footer
+                                    content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit.
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+  
+                            <!-- Grid column -->
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold">Categories</h6>
+                                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #fd7e14; height: 2px"/>
+                                <p>
+                                    <a href="#!" class="text-dark text-decoration-none">Training</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-dark text-decoration-none">News and Fixtures</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-dark text-decoration-none">Shopping</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+  
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                                  <!-- Links -->
+                                  <h6 class="text-uppercase fw-bold">Purchase Equipments</h6>
+                                  <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #fd7e14; height: 2px"/>
+                                  <p>
+                                      <a href="#!" class="text-dark text-decoration-none">Football Equipments</a>
+                                  </p>
+                                  <p>
+                                      <a href="#!" class="text-dark text-decoration-none">Cricket Equipments</a>
+                                  </p>
+                                  <p>
+                                      <a href="#!" class="text-dark text-decoration-none">Gym</a>
+                                  </p>
+                                  <p>
+                                      <a href="#!" class="text-dark text-decoration-none">Others</a>
+                                  </p>
+                            </div>
+                            <!-- Grid column -->
+  
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold">Contact Us</h6>
+                                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #fd7e14; height: 2px"/>
+                                <p><i class="fas fa-home mr-3"></i>Kerala, India</p>
+                                <p><i class="fas fa-envelope mr-3"></i> JogoBonito@gmail.com</p>
+                                <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                                <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                            </div>
+  
+                            <!-- Grid column -->
+                            </div>
+                            <!-- Grid row -->
+                    </div>
+                    </section>
+                    <!-- Section: Links  -->
+  
+                    <!-- Copyright -->
+                    <div class="text-center p-3"  style="background-color: #fd7e14">
+                      © 2020 Copyright:
+                      <a class="text-dark" href="https://mdbootstrap.com/">JogoBonito@gmail.com</a>
+                    </div>
+                    <!-- Copyright -->
+                </footer>
+                <!-- Footer -->
+      </div>
+      <!-- footer end -->
+  
+       <!-- Vendor JS Files -->
+      <script src="{% static 'css/vendor/aos/aos.js' %}"></script>
+      <script src="{% static 'css/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'css/vendor/glightbox/js/glightbox.min.js' %}"></script>
+      <script src="{% static 'css/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+      <script src="{% static 'css/vendor/php-email-form/validate.js' %}"></script>
+      <script src="{% static 'css/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  
+      <!-- Template Main JS File -->
+      <script src="{% static 'js/main.js' %}"></script>
+  
+      <script>if( window.self == window.top ) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-55234356-4', 'auto'); ga('send', 'pageview'); } </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+         $(document).ready(function(){
+          //  carousel start
+            $("li").click(function(){
+              $("li.active").removeClass("active");
+              $(this).addClass("active");
+              
+            });
+            $(".carousel-img").mouseover(function(){
+              $(".carousel-item a").removeClass("carousel-btn");
+              $(".carousel-item a").addClass("carousel-hover-btn")
+              $(".carousel-item a").mouseover(function(){
+                $(this).removeClass("carousel-hover-btn");
+                $(this).addClass("carousel-btn-hover");
+              });
+              $(".carousel-item a").mouseout(function(){
+                $(this).removeClass("carousel-btn-hover");
+                $(this).addClass("carousel-hover-btn");
+              });
+            });
+            $(".carousel-img").mouseout(function(){
+              $(".carousel-item a").removeClass("carousel-hover-btn");
+              $(".carousel-item a").addClass("carousel-btn");
+            });
+          //  carousel start
+            
+        });
+    </script>
+</body>
+</html>

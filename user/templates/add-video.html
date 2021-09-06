@@ -1,0 +1,123 @@
+{% extends 'adminbase.html' %}
+
+{% block admincontent %}
+{% for message in messages %}
+<div class="p-2 alert alert-success" id="msg">
+    {{ message }}
+</div>
+{% endfor %}
+
+<div class="p-5 col-12">
+    <div class="p-5 conatiner-fluid">
+        <div class="row">
+            <div class="col-6 p-5 offset-3" style="box-shadow: gray 2px 2px 10px 2px; border-radius: 10px;">
+                <!-- <div class="col-12 h1 text-center mb-5">
+                    <span style="font-weight: bold;">Add Video</span>
+                </div> -->
+                <ul class="nav nav-tabs mb-5">
+                    <li class="nav-item w-50">
+                        <button id="newsportsbtn" class="nav-link w-100" onclick="newsports()">New Sports</button>
+                    </li>
+                    <li class="nav-item w-50">
+                        <button id="existingsportsbtn" class="active  nav-link w-100" onclick="existingports()">Existing Sports</button>
+                    </li>
+                </ul>
+                <form id="newsportsform" class="d-none" action="{% url 'addvideo' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="newsports">sports name :</label>
+                        <input type="text" name="newsports" id="newsports" required class="form-control" placeholder="Enter a new sports name">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label for="icon" class="form-label">Icon :</label>
+                        <input type="file" name="icon" id="icon" class="form-control">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label for="sportsimage" class="form-label">Sports Image :</label>
+                        <input type="file" name="sportsimage" id="sportsimage"  class="form-control">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="position">Position :</label>
+                        <input type="text" name="position" id="position" required class="form-control">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label for="positionimage" class="form-label">Position Image :</label>
+                        <input type="file" name="positionimage" id="positionimage"  class="form-control">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="tutorial">Tutorial :</label>
+                        <input type="text" name="tutorial" id="tutorial" required class="form-control">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="videoname">Video Name :</label>
+                        <input type="text" name="videoname" id="videoname" required class="form-control">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="link">Link :</label>
+                        <input type="text" name="link" id="link" required class="form-control">
+                    </div>
+                    <div class="pt-1 mb-4 text-center">
+                        <button class="btn btn-dark btn-lg btn-block col-12" type="submit"><b>ADD</b></button>
+                    </div>
+                </form>
+                <form id="existingsportsform" class="" action="{% url 'addvideo' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <div class="form-outline mb-5">
+                        <label for="existingsports" class="form-label">Select a sports : </label>
+                        <select name="existingsports" id="existingsports" class="form-select">
+                            <option selected disabled>Select a sports</option>
+                            {% for sports in sports_obj %}
+                            <option value="{{ sports.name }}" onselect="filter()">{{ sports.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="row">
+                    <div class="form-outline mb-4 col-6">
+                        <input type="radio" class="form-check-input" name="checkpos" checked id="checkpos1" onclick="displaynewpos()">
+                        <label class="form-check-label" for="checkpos1">New Position</label>
+                    </div>
+                    <div class="form-outline mb-4 col-6">
+                        <input type="radio" class="form-check-input" name="checkpos" id="checkpos2" onclick="displayexistingpos()">
+                        <label class="form-check-label" for="checkpos2">Existing Position</label>
+                    </div>
+                </div>
+                    <div class="form-outline mb-4" id="newpos">
+                        <label class="form-label" for="newposition">Enter A New Position :</label>
+                        <input type="text" name="newposition" id="newposition" required class="form-control">
+                    </div>
+                    <div class="form-outline mb-4" id="newposimg">
+                        <label for="positionimage" class="form-label">Position Image :</label>
+                        <input type="file" name="positionimage" id="positionimage" required  class="form-control">
+                    </div>
+                    <div class="form-outline mb-4 d-none" id="existingpos">
+                        <label for="existingposition" class="form-label">Select a position</label>
+                        <select name="existingposition" id="existingposition" class="form-select">
+                            <option selected disabled>Select a position</option>
+                            {% for pos in position_obj %}
+                            <option value="{{ pos.position }}" id="{{ pos.name }}" class="d-none">{{ pos.position }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="tutorial">Tutorial :</label>
+                        <input type="text" name="tutorial" id="tutorial" required class="form-control">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="videoname">Video Name :</label>
+                        <input type="text" name="videoname" id="videoname" required class="form-control">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="link">Link :</label>
+                        <input type="text" name="link" id="link" required class="form-control">
+                    </div>
+                    <div class="pt-1 mb-4 text-center">
+                        <button class="btn btn-dark btn-lg btn-block col-12" type="submit"><b>ADD</b></button>
+                    </div>
+                </form> 
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

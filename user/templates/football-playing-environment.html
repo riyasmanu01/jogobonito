@@ -1,0 +1,41 @@
+{% extends 'football.html' %}
+{% load static %}
+
+{% block selected %}
+    <!-- Playing Environment Start-->
+<div class="row text-center p-5 h2" style="color: #fd7e14;"><b>Playing Environment</b></div>
+<div class="row">
+    <p style="text-align: justify; font-size: 16px;">
+        Football is the only sport that draws maximum crowd compared to any other sport. Two teams dribble, 
+        pass, and tackle with the ball to score goals. Boxes are drawn around the goal post to indicate 
+        goalkeeper’s area. A line is drawn in the center of football pitch, called half-way line. For every 
+        football match, there are four referees on field who check if the equipment and conditions are 
+        suitable before the start of play.
+    </p>
+    <h3 style="color: #fd7e14;" class="py-4"><b>Dimensions of the Football Field</b></h3>
+    <p style="text-align: justify; font-size: 16px;">
+        Given below is a sketch of a football field illustrating the various markings on the field.
+    </p>
+    <div class="col-12 text-center py-3">
+        <img src="{% static 'images/Training/Football/Ground-Dimensions/dimensions_football_field.jpg' %}" alt="" width="30%">
+    </div>
+    <p style="text-align: justify; font-size: 16px;">
+        Professional football stadiums should be 105m long and 68m wide with an area of just above 7 sq.km. 
+        The outline of the field is called <b>touchline</b>. There is a circle in the center of the <b>pitch</b> 
+        (the football field) that indicates opponent’s distance from the ball during <b>kick-off</b>. 
+        This circle has a radius of 9.15m. There is a center spot in the circle where the ball should be 
+        kept at the beginning of a new session or after a goal is scored. The line along the breadth of the 
+        field is called <b>goal line</b>. The goal posts are placed in the center of the field and goal line.
+        The distance between the inner and outer edges of the goal post are 7.4m and 2.4m respectively. 
+        The goal post at each end has two boxes from goal line. The smaller one is 5m box and bigger is 
+        18m box. All the free-kicks of attacking team are to be taken from 5m box. The 18m box indicates 
+        the area where the goalkeeper is permitted to stop the ball with his hands. <b>Direct free-kick</b> or 
+        <b>penalty kick</b> can be taken from a white mark that is within the 18m box. In early days of football, semi-circles 
+        were drawn by goal-line which were later replaced with rectangular boxes. In order to maintain the 
+        tradition, a small semi-circle is drawn outside the bigger box. The corners of the football field 
+        have small arcs that indicate where the ball should be placed for a corner kick.
+    </p>
+
+</div>
+<!-- Playing Environment End-->
+{% endblock %}
